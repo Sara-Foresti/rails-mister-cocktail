@@ -1,0 +1,7 @@
+<h2>Your custom cocktail</h2>
+<!-- <p>Find me in app/views/cocktails/new.html.erb</p> -->
+<%= simple_form_for @cocktail do |f| %>
+    <%= f.input :name %>
+    <%= f.submit "Create your Cocktail!" %>
+<% end %>
+

@@ -1,0 +1,10 @@
+<h2>Dose the ingradients for your cocktail</h2>
+<!-- <p>Find me in app/views/doses/new.html.erb</p> -->
+
+<!-- form to create a new dose for the clicked cocktail -->
+<%= simple_form_for([@cocktail, @dose]) do |f| %>
+  <%= f.input :ingredient_id, collection: @ingredients %>
+  <%= f.input :description %>
+  <%= f.submit "Add your doses" %>
+<% end %>
+
