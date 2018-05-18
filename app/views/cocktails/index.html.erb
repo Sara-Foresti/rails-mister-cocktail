@@ -1,10 +1,18 @@
-<h1>Mister Cocktails</h1>
-<!-- <p>Find me in app/views/cocktails/index.html.erb</p> -->
-<h2>Our Cocktails</h2>
-<% @cocktails.each do |cocktail| %>
-  <div class="card">
-    <%= link_to cocktail.name,  cocktail_path(cocktail) %>
+<div class="text-center" id="home-body">
+  <h1 id="home-header">THE LOUNGE</h1>
+  <!-- <p>Find me in app/views/cocktails/index.html.erb</p> -->
+  <h2>Your Cocktails Collection</h2>
+  <div class="container">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card">
+            <%= link_to cocktail.name,  cocktail_path(cocktail) %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
 
-<%= link_to "Create a new cocktail", new_cocktail_path %>
+  <%= link_to "Create a new cocktail", new_cocktail_path %>
+</div>

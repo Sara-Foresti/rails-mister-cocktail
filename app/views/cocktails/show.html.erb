@@ -1,3 +1,11 @@
 <h2><%= @cocktail.name %></h2>
 <!-- <p>Find me in app/views/cocktails/show.html.erb</p> -->
+<div class="doses-list">
+  <% @cocktail.doses.each do |dose| %>
+    <div class="dose">
+      <div><%= dose.description %> <%= dose.ingredient.name %></div>
+      <div><%= link_to '<i class="far fa-times-circle"></i>'.html_safe, dose_path(dose), method: :delete %></div>
+    </div>
+  <% end %>
+</div>
 <%= link_to "Add ingredients to your cocktail", new_cocktail_dose_path(@cocktail) %>
