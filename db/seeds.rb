@@ -8,6 +8,8 @@
 require "open-uri"
 require "json"
 
+Cocktail.destroy_all
+
 puts 'Cleaning database...'
 Ingredient.destroy_all if Rails.env.development?
 ingredients = JSON.parse(open("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list").read)
@@ -19,5 +21,4 @@ end
 # Ingredient.create(name: "ice")
 # Ingredient.create(name: "mint leaves")
 # Ingredient.create(name: "apple juice")
-
 puts 'Finished!'

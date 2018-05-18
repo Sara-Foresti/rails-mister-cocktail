@@ -1,6 +1,8 @@
 class Cocktail < ApplicationRecord
   has_many :doses, dependent: :destroy
   has_many :ingredients, through: :doses
+
+  mount_uploader :photo, PhotoUploader
   # You can't delete an ingredient if it used by at least one cocktail
   # just by adding dependent: :destroy to doses, it'll work, because
   # the dose is the unique combination that hold cocktails and ingredients
