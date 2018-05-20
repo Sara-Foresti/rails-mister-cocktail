@@ -1,0 +1,16 @@
+.cocktail-banner {
+  height: 70vh;
+  position: relative;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  color: white;
+  h2 {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+  };
+  .button {
+    position: absolute;
+    bottom: 30px;
+    right: 30px
+  }
+}

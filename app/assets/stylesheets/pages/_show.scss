@@ -1,3 +1,11 @@
 .dose {
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cocktail-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

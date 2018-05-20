@@ -4,7 +4,7 @@ class DosesController < ApplicationController
     # we need to find the cocktail by id
     @cocktail = Cocktail.find(params[:cocktail_id])
     # we need the list of ingredients
-    @ingredients = Ingredient.all
+    @ingredients = Ingredient.all.order(:name)
   end
 
   def create

@@ -1,0 +1,13 @@
+<div class="navbar">
+  <!-- Logo -->
+  <div class="navbar-logo">
+    <%= link_to root_path, class: "navbar-logo" do %>
+      <%= image_tag "logo.svg" %>
+    <% end %>
+  </div>
+
+  <div class="navbar-button">
+    <%= link_to "Create a new cocktail", new_cocktail_path, class: "button" %>
+  </div>
+
+</div>

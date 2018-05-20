@@ -1,19 +1,22 @@
 <div class="text-center" id="home-body">
-  <h1 id="home-header">THE LOUNGE</h1>
+  <h1>THE LOUNGE</h1>
   <!-- <p>Find me in app/views/cocktails/index.html.erb</p> -->
   <h2>Your Cocktails Collection</h2>
   <div class="container">
     <div class="row">
       <% @cocktails.each do |cocktail| %>
         <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-         url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
-            <%= link_to cocktail.name, cocktail_path(cocktail) %>
-          </div>
+          <%= link_to cocktail_path(cocktail) do %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+           url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+              <div class="cocktail-name"><%= cocktail.name %></div>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
   </div>
 
-  <%= link_to "Create a new cocktail", new_cocktail_path %>
+
 </div>
+
