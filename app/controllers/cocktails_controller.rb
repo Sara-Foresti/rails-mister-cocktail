@@ -17,10 +17,6 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-    if @cocktail.photo.model.id == nil
-      url = "http://icons.iconarchive.com/icons/iconsmind/outline/512/Cocktail-icon.png"
-      @cocktail.remote_photo_url = url
-    end
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else

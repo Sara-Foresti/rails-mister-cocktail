@@ -1,7 +1,13 @@
-<div class="cocktail-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-           url('<%= cl_image_path @cocktail.photo, crop: :fill %>')">
-  <h2><%= @cocktail.name %></h2>
-</div>
+<% if @cocktail.photo.model["photo"].nil? %>
+  <div class="cocktail-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+             url('<%= cl_image_path "http://res.cloudinary.com/dehoiiivb/image/upload/v1527184496/ywbvhyfxpaiujccn3r9g.png", crop: :fill %>')">
+    <h2><%= @cocktail.name %></h2>
+<% else %>
+  <div class="cocktail-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+             url('<%= cl_image_path @cocktail.photo, crop: :fill %>')">
+    <h2><%= @cocktail.name %></h2>
+  </div>
+<% end %>
 <!-- <p>Find me in app/views/cocktails/show.html.erb</p> -->
 <div class="cocktail-details">
   <div class="doses-list">
